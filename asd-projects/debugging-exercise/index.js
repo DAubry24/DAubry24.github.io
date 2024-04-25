@@ -23,7 +23,7 @@ $(document).ready(function(){
         var newId = getId(i);
         var newCircle = makeCircle(newId);
         circles.push(newCircle);
-        
+       
         addNewCircleElement(newCircle, newId);
     }
     
@@ -41,18 +41,18 @@ $(document).ready(function(){
     
         // this creates an empty object
         var circle = {};
-        
+       
         // this creates some useful variables that are not directly placed in the object
         var maxX = boardWidth - circleRadius*2;
         var maxY = boardHeight - circleRadius*2;
-        
+       
         // this gives the circle object all of the data that it needs to store
         circle.id = "#" + id;
         circle.x = Math.random() * maxX + circleRadius;
         circle.y = Math.random() * maxY + circleRadius;
         circle.speedX = decideSpeed();
         circle.speedY = decideSpeed();
-        
+       
         return circle;
     }
     
@@ -69,12 +69,12 @@ $(document).ready(function(){
     // this adds a circle into the HTML
     function addNewCircleElement(circle, id){
     
-        // this creates the HTML for a new circle element 
+        // this creates the HTML for a new circle element
         var $circle = $('<div>').attr('id', id)
             .css('left', circle.x)
             .css('top', circle.y)
             .addClass("circle");
-        
+       
         // this inserts the circle's HTML into your website
         $circle.appendTo($board);  
     }
@@ -140,7 +140,7 @@ $(document).ready(function(){
     
     // this redraws the circle's position on the screen
     function updateCircleOnScreen(circle){
-       
+        maxCircles = 10;
     
         // these lines redraw the circle's position
         $(circle.id).css('left', circle.x);
